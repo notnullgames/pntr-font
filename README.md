@@ -10,10 +10,10 @@ This adds a couple functions for working with ttf or otf files:
 
 ```c
 // load a bmfont from a file
-pntr_font* pntr_load_font(const char* fileName, const char* characters);
+pntr_font* pntr_load_font(const char* fileName, unsigned fontSize);
 
 // load a bmfont from memory-array
-pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, const char* characters);
+pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, unsigned fontSize);
 ```
 
 ## fonts in general

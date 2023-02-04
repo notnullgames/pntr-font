@@ -1,5 +1,5 @@
-#ifndef PNTR_H__
-#define PNTR_H__
+#ifndef PNTR_FONT_H__
+#define PNTR_FONT_H__
 
 #include <stdint.h>  // uint32_t
 
@@ -7,28 +7,29 @@
 #define PNTR_API
 #endif
 
-#ifdef PNTR_IMPLEMENTATION
-#ifndef PNTR_IMPLEMENTATION_ONCE
-#define PNTR_IMPLEMENTATION_ONCE
-
 #ifdef __cplusplus
 extern "C" {
+
 #endif
 
 // load a bmfont from a file
-PNTR_API pntr_font* pntr_load_font(const char* fileName, const char* characters);
+PNTR_API pntr_font* pntr_load_font(const char* fileName, unsigned fontSize);
 
 // load a bmfont from memory-array
-PNTR_API pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, const char* characters);
+PNTR_API pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, unsigned fontSize);
 
-#endif  // PNTR_H__
+#endif  // PNTR_FONT_H__
 
-PNTR_API pntr_font* pntr_load_font(const char* fileName, const char* characters) {
+#ifdef PNTR_FONT_IMPLEMENTATION
+#ifndef PNTR_FONT_IMPLEMENTATION_ONCE
+#define PNTR_FONT_IMPLEMENTATION_ONCE
+
+PNTR_API pntr_font* pntr_load_font(const char* fileName, unsigned fontSize) {
   // TODO
   return pntr_load_default_font();
 }
 
-PNTR_API pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, const char* characters) {
+PNTR_API pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, unsigned fontSize) {
   // TODO
   return pntr_load_default_font();
 }
@@ -37,5 +38,5 @@ PNTR_API pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, un
 }
 #endif
 
-#endif  // PNTR_IMPLEMENTATION_ONCE
-#endif  // PNTR_IMPLEMENTATION
+#endif  // PNTR_FONT_IMPLEMENTATION
+#endif  // PNTR_FONT_IMPLEMENTATION_ONCE
