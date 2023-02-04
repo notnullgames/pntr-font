@@ -43,7 +43,7 @@ pntr already has support for bm & tty fonts. This library is meant to work well 
 
 ### bmfont
 
-These are variable-width, from a 1-char high image, using color lines in between them.
+These are variable-width, from a 1-char high image, using color lines in between them. I made a [little tool](https://lovefont.surge.sh) to create them from any font you have installed on your system. Right-click on the generated image, and choose "Save Image As".
 
 ```c
 // load a bmfont from a file
