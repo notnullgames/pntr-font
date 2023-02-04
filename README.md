@@ -38,7 +38,7 @@ pntr_font* pntr_load_default_font();
 
 ## other fonts
 
-pntr already has support for bm & tty fonts. This library is meant to work well with those, and it should all be fairly seemless, for the user-perspective.
+pntr already has support for bm & tty fonts. This library is meant to work well with those, and it should all be fairly seamless, for the user-perspective.
 
 
 ### bmfont
