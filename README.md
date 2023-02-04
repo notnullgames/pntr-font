@@ -61,7 +61,12 @@ pntr_font* pntr_load_bmfont_from_memory(const unsigned char* fileData, unsigned 
 These are fixed-width imaages, in a grid, from an image.
 
 ```c
+// load a ttyfont from a file
 pntr_font* pntr_load_ttyfont(const char* fileName, int glyphWidth, int glyphHeight, const char* characters);
-pntr_font* pntr_load_ttyfont_from_memory(const unsigned char* fileData, unsigned int dataSize, int glyphWidth, int glyphHeight, const char* characters);
+
+// load a ttyfont from an existing image object
 pntr_font* pntr_load_ttyfont_from_image(pntr_image* image, int glyphWidth, int glyphHeight, const char* characters);
+
+// load a ttyfont from memory-array
+pntr_font* pntr_load_ttyfont_from_memory(const unsigned char* fileData, unsigned int dataSize, int glyphWidth, int glyphHeight, const char* characters);
 ```
