@@ -58,7 +58,7 @@ pntr_font* pntr_load_bmfont_from_memory(const unsigned char* fileData, unsigned 
 
 ## ttyfont
 
-These are fixed-width imaages, in a grid, from an image.
+These are fixed-width images, in a grid, from an image.
 
 ```c
 // load a ttyfont from a file
