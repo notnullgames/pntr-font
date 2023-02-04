@@ -50,8 +50,8 @@ void mainloop() {
     SDL_Quit();
   } else {
     // Update
-    pntr_draw_text(canvas, fontBeleive, "Believe TTF Font Example", 20, 50);
-    pntr_draw_text(canvas, fontWintersong, "Winter Song TTF Font Example", 20, 80);
+    pntr_draw_text(canvas, fontBeleive, "'Believe It' TTF Font Example", 20, 50);
+    pntr_draw_text(canvas, fontWintersong, "'Winter Song' TTF Font Example", 20, 80);
 
     SDL_BlitSurface(surface, NULL, screen, NULL);
     SDL_UpdateWindowSurface(window);
@@ -59,7 +59,10 @@ void mainloop() {
 }
 
 int main() {
+  // load beleiveit.ttf with 20px size
   fontBeleive = pntr_load_font("fonts/beleiveit.ttf", 20);
+
+  // load wintersong.ttf with 30px size
   fontWintersong = pntr_load_font("fonts/wintersong.ttf", 30);
 
   // this is all regular pntr/SDL stuff
