@@ -2,6 +2,8 @@
 
 This provides an API for working with TTF/OTF font files, in the excellant low-level graphics library [pntr](https://github.com/robloach/pntr).
 
+I made [an example](./example) that uses pntr-font in SDL, that can be compiled for native or the web, but you can use it with any rendering library (see [these rad examples](https://github.com/RobLoach/pntr/tree/master/examples).)
+
 ## ttf/otf
 
 This adds a couple functions for working with ttf or otf files:
@@ -69,4 +71,15 @@ pntr_font* pntr_load_ttyfont_from_image(pntr_image* image, int glyphWidth, int g
 
 // load a ttyfont from memory-array
 pntr_font* pntr_load_ttyfont_from_memory(const unsigned char* fileData, unsigned int dataSize, int glyphWidth, int glyphHeight, const char* characters);
+```
+
+## building example
+
+You can build the example for native, liek this:
+
+```
+cd example
+cmake -B build .
+cmake --build build
+./build/pntr-font
 ```
