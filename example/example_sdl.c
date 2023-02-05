@@ -4,7 +4,7 @@
 // Use the ARGB pixel format
 #define PNTR_PIXELFORMAT_ARGB
 
-// Support the default font
+// Support the default font - not really needed here
 #define PNTR_SUPPORT_DEFAULT_FONT
 
 // This must be loaded first

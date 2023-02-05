@@ -86,15 +86,22 @@ You can build the example for native, like this:
 ```
 cd example
 cmake -B build .
-cmake --build build
+make -C build
 ./build/pntr-font-demo
 ```
 
-You can build demo for web like this, after you have built it for native:
+You can build demo for web like this, after you have run `cmake -B build .`:
 
 ```
-emcc example/example_sdl.c -sUSE_SDL=2 -o build/index.html --preload-file example/fonts@/fonts --shell-file example/shell.html -Ibuild/_deps/pntr-src -Ibuild/_deps/schrift-src 
+# might need to do this for lingering old native builds
+rm -rf example/build
+
+cd example
+emcmake cmake -B build .
+emmake make -C build
 ```
+
+> **Note**: This is currently not working due to `error: static declaration of 'reallocarray' follows non-static declaration` error with schrift
 
 ## thanks
 
