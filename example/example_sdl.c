@@ -60,10 +60,10 @@ void mainloop() {
 
 int main() {
   // load beleiveit.ttf with 20px size
-  fontBeleive = pntr_load_font("fonts/beleiveit.ttf", 20);
+  fontBeleive = pntr_load_font("fonts/beleiveit.ttf");
 
   // load wintersong.ttf with 30px size
-  fontWintersong = pntr_load_font("fonts/wintersong.ttf", 30);
+  fontWintersong = pntr_load_font("fonts/wintersong.ttf");
 
   // this is all regular pntr/SDL stuff
   canvas = pntr_new_image(400, 225);

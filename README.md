@@ -4,16 +4,22 @@ This provides an API for working with TTF/OTF font files, in the excellant low-l
 
 I made [an example](./example) that uses pntr-font in SDL, that can be compiled for native or the web, but you can use it with any rendering library (see [these rad examples](https://github.com/RobLoach/pntr/tree/master/examples).)
 
+Currently, I am downloading [schrift](https://github.com/tomolt/libschrift) and adding it to the build, but eventually I should probably inline it in `pntr-font.h`, for easier use.
+
+
 ## ttf/otf
 
 This adds a couple functions for working with ttf or otf files:
 
 ```c
-// load a bmfont from a file
-pntr_font* pntr_load_font(const char* fileName, unsigned fontSize);
+// convert a schrift font to pntr font
+pntr_font* sft_to_pntr(SFT_Font* fontIn);
 
-// load a bmfont from memory-array
-pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize, unsigned fontSize);
+// load a font from a TTF/OTF file
+pntr_font* pntr_load_font(const char* fileName);
+
+// load a font from a TTF/OTF memory-array
+pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize);
 ```
 
 ## fonts in general
@@ -81,5 +87,10 @@ You can build the example for native, liek this:
 cd example
 cmake -B build .
 cmake --build build
-./build/pntr-font
+./build/pntr-font-demo
 ```
+
+## thanks
+
+- Obviously, [pntr](https://github.com/RobLoach/pntr) is rad, and @RobLoach is extremely knowledgeable and helpful
+- [schrift](https://github.com/tomolt/libschrift) does all the font-work here, and is really a great lib for working with OTF/TTF
