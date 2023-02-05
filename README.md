@@ -9,7 +9,7 @@ Currently, I am downloading [schrift](https://github.com/tomolt/libschrift) and 
 
 ## ttf/otf
 
-This adds a couple functions for working with ttf or otf files:
+This adds a few functions for working with ttf or otf files:
 
 ```c
 // convert a schrift font to pntr font
@@ -18,7 +18,7 @@ pntr_font* sft_to_pntr(SFT_Font* fontIn);
 // load a font from a TTF/OTF file
 pntr_font* pntr_load_font(const char* fileName);
 
-// load a font from a TTF/OTF memory-array
+// load a font from a TTF/OTF memory-buffer
 pntr_font* pntr_load_font_from_memory(const unsigned char* fileData, unsigned int dataSize);
 ```
 
@@ -60,7 +60,7 @@ pntr_font* pntr_load_bmfont(const char* fileName, const char* characters);
 // load a bmfont from an existing image object
 pntr_font* pntr_load_bmfont_from_image(pntr_image* image, const char* characters);
 
-// load a bmfont from memory-array
+// load a bmfont from memory-buffer
 pntr_font* pntr_load_bmfont_from_memory(const unsigned char* fileData, unsigned int dataSize, const char* characters);
 ```
 
@@ -75,19 +75,25 @@ pntr_font* pntr_load_ttyfont(const char* fileName, int glyphWidth, int glyphHeig
 // load a ttyfont from an existing image object
 pntr_font* pntr_load_ttyfont_from_image(pntr_image* image, int glyphWidth, int glyphHeight, const char* characters);
 
-// load a ttyfont from memory-array
+// load a ttyfont from memory-buffer
 pntr_font* pntr_load_ttyfont_from_memory(const unsigned char* fileData, unsigned int dataSize, int glyphWidth, int glyphHeight, const char* characters);
 ```
 
 ## building example
 
-You can build the example for native, liek this:
+You can build the example for native, like this:
 
 ```
 cd example
 cmake -B build .
 cmake --build build
 ./build/pntr-font-demo
+```
+
+You can build demo for web like this, after you have built it for native:
+
+```
+emcc example/example_sdl.c -sUSE_SDL=2 -o build/index.html --preload-file example/fonts@/fonts --shell-file example/shell.html -Ibuild/_deps/pntr-src -Ibuild/_deps/schrift-src 
 ```
 
 ## thanks
